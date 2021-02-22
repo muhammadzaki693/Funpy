@@ -1,3 +1,3 @@
 import zakifun
 
-zakifun.template("calculator")
+zakifun.command("-V")

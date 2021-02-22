@@ -26,3 +26,7 @@ def template(select):
         break
   else:
     print(colored("selectError: undefine", "red"))
+
+def command(commands):
+  if commands == "-V" or commands == "--version":
+    print("1.1.0")
