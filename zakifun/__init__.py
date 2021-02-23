@@ -1,4 +1,5 @@
 import termcolor
+import time
 from termcolor import colored
 
 def create():
@@ -24,9 +25,36 @@ def template(select):
       else:
         print(colored("uknown: "+y, "red"))
         break
+  elif select == "python terminal":
+    while 1:
+      x2 = input(">>> ")
+      if x2 == "exit":
+        print("restart")
+        time.sleep(3)
+        print("done")
+        break
+      
+      try:
+        y2 = eval(x2)
+        print(y2)
+      except:
+        try:
+          exec(x2)
+        except Exception as e:
+          print("error: ",e)
+  elif select == "custom":
+    while 1:
+      r = input("execute: ")
+      
+      try:
+        exec(r)
+      except Exception as e:
+        print("error uknown to exec another error: ",e)
   else:
     print(colored("selectError: undefine", "red"))
 
 def command(commands):
   if commands == "-V" or commands == "--version":
     print("1.1.0")
+  elif commands == "__name__":
+    print(__name__)
