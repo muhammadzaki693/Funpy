@@ -50,6 +50,12 @@ def template(select):
         exec(r)
       except Exception as e:
         print("error uknown to exec another error: ",e)
+  elif select == "open":
+    while 1:
+      j = input("file to open and read: ")
+      file = open(j, "r")
+    
+      print(file.read())
   else:
     print(colored("selectError: undefine", "red"))
 
